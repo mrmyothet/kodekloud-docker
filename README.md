@@ -12,11 +12,12 @@ docker run -d --name=worker --link db:db --link redis:redis worker
 docker-compose up
 ```
 
-### Example voting app 
+### Example voting app
 
 ```bash
 nano ~/.docker/config.json
 ```
+
 - change credsStore to credStore
 
 ```bash
@@ -40,12 +41,18 @@ Error: Database is uninitialized and superuser password is not specified.
 
 ```
 
+---
+
 ```bash
 docker run -d --name=db -e POSTGRES_PASSWORD=my_password postgres:9.4
 docker ps
 ```
 
+---
+
 ```bash
 cd worker
 docker build . -t worker-app
 ```
+
+---
